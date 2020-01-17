@@ -1,0 +1,29 @@
+version: '3'
+
+networks:
+  default-network:
+    driver: bridge
+
+services:
+  db:
+    image: postgres
+    container_name: db
+    hostname: db
+    networks:
+      - default-network
+
+  web:
+      build: .
+      command: "sh entry_point.sh"
+      volumes:
+        - .:/code
+      ports:
+        - "8000:8000"
+      depends_on:
+        - db
+      container_name: django
+      networks:
+        - default-network
+      links:
+        - db:db
+      restart: on-failure
