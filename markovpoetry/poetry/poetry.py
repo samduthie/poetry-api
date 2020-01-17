@@ -45,7 +45,7 @@ def generate_sentence(sentence_length=10):
 		sentence.append(new_word)
 		k = f'{old_word}_{new_word}'
 
-	print(' '.join(sentence))
+	return(' '.join(sentence))
 
 	
 generate_sentence()
