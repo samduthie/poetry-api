@@ -44,6 +44,7 @@ def generate_chain():
 def generate_sentence(sentence_length=0):
 	if sentence_length == 0:
 		sentence_length = random.randint(10, 40)
+
 	chain = generate_chain()
 
 	sentence = []
@@ -64,9 +65,8 @@ def generate_sentence(sentence_length=0):
 		sentence.append(new_word)
 
 	sentence = ' '.join(sentence)
-	full_sentence = f'\"{sentence.capitalize()}\"'
 
-	return(full_sentence)
+	return(sentence.capitalize())
 
 	
 generate_sentence()
