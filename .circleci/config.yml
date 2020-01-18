@@ -48,7 +48,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python manage.py test
+            python markovpoetry/manage.py test poetry
 
       - store_artifacts:
           path: test-reports
