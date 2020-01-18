@@ -12,13 +12,13 @@ services:
     networks:
       - default-network
 
-  web:
+  django:
       build: .
       command: "sh entry_point.sh"
       volumes:
         - .:/code
       ports:
-        - "8000:8000"
+        - "80:8000"
       depends_on:
         - db
       container_name: django

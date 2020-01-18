@@ -1,3 +1,8 @@
 from django.test import TestCase
 
-# Create your tests here.
+from poetry.poetry import generate_sentence
+
+
+class TestPoetrySentenceGeneration(TestCase):
+    def test_sentence(self):
+        generate_sentence()
