@@ -25,7 +25,7 @@ def generate_chain():
 
 	# generate markov chain
 	for i, word in enumerate(words):
-		try: # end of stream
+		try:  # end of stream
 			second_word = words[i+1]
 			third_word = words[i+2]
 		except IndexError:
